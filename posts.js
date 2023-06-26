@@ -13,6 +13,9 @@ function showPosts(posts) {
   posts.forEach(post => {
     const postElement = document.createElement('p');
     postElement.textContent = `${post.id}. ${post.title}`;
+    postElement.addEventListener('click', () => {
+      window.location.href = `post.html?id=${post.id}`;
+    });
     contentElement.appendChild(postElement);
   });
 }
